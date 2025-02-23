@@ -62,8 +62,7 @@ server.setRequestHandler(ListResourcesRequestSchema, async () => {
 
 server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => {
   return {
-    templates: [
-      
+    resourceTemplates: [
     ]
   }
 })
