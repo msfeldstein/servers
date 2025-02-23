@@ -6,6 +6,7 @@ import {
   CallToolRequestSchema,
   ListResourcesRequestSchema,
   ListToolsRequestSchema,
+  ListResourceTemplatesRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import pg from "pg";
@@ -58,6 +59,14 @@ server.setRequestHandler(ListResourcesRequestSchema, async () => {
     client.release();
   }
 });
+
+server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => {
+  return {
+    templates: [
+      
+    ]
+  }
+})
 
 server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
   const resourceUrl = new URL(request.params.uri);
